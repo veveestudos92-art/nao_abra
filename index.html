@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenho uma pergunta...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Você tem outras? 🧐</h1>
+        <p>Seja sincero...</p>
+        
+        <div class="botoes">
+            <button id="sim" onmouseover="fujir()" onclick="fujir()">Sim</button>
+            <button id="nao" onclick="clicouNoNao()">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function fujir() {
+            const botaoSim = document.getElementById("sim");
+            
+            // Calcula o espaço da tela
+            const larguraJanela = window.innerWidth - 100;
+            const alturaJanela = window.innerHeight - 50;
+            
+            // Gera as coordenadas aleatórias
+            const xAleatorio = Math.floor(Math.random() * larguraJanela);
+            const yAleatorio = Math.floor(Math.random() * alturaJanela);
+            
+            // Move o botão Sim
+            botaoSim.style.position = "absolute";
+            botaoSim.style.left = xAleatorio + "px";
+            botaoSim.style.top = yAleatorio + "px";
+        }
+
+        function clicouNoNao() {
+            alert("Acho bom mesmo! Resposta correta. 😉");
+        }
+    </script>
+</body>
+</html>
